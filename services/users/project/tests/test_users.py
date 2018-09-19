@@ -17,10 +17,10 @@ class TestUserService(BaseTestCase):
 
     def test_users(self):
         """Ensure the /ping route behaves correctly."""
-        rv = self.client.get('/api/v0/users/ping')
+        rv = self.client.get('/api/v0/users/health')
         data = json.loads(rv.data.decode())
         self.assertEqual(rv.status_code, 200)
-        self.assertIn('pong!', data['message'])
+        self.assertIn('Users service healthy!', data['message'])
         self.assertIn('success', data['status'])
 
     def test_add_user(self):
@@ -183,7 +183,7 @@ class TestUserService(BaseTestCase):
                  user2_json()['email'],
                  user2_json()['password'])
         with self.client:
-            rv = self.client.get('/api/v0users')
+            rv = self.client.get('/api/v0/users')
             data = json.loads(rv.data.decode())
             self.assertEqual(rv.status_code, 200)
             self.assertEqual(len(data['data']['users']), 2)

@@ -207,7 +207,7 @@ class TestAuthBlueprint(BaseTestCase):
     def test_invalid_logout(self):
         with self.client:
             response = self.client.get(
-                '/api/v0users/auth/logout',
+                '/api/v0/users/auth/logout',
                 headers={'Authorization': 'Bearer invalid'})
             data = json.loads(response.data.decode())
             self.assertTrue(data['status'] == 'fail')

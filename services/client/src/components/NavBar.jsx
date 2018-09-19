@@ -17,6 +17,11 @@ const NavBar = (props) => (
                 <LinkContainer to="/about">
                     <NavItem eventKey={2}>About</NavItem>
                 </LinkContainer>
+                {props.isAuthenticated && 
+                    <LinkContainer to="/status">
+                        <NavItem eventKey={3}>User Status</NavItem>
+                    </LinkContainer>
+                }
             </Nav>
             <Nav pullRight>
                 {!props.isAuthenticated && 

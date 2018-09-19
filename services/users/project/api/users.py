@@ -10,12 +10,13 @@ from project.api.utils import authenticate, is_admin
 users_blueprint = Blueprint('users', __name__, template_folder='./templates')
 
 
-@users_blueprint.route('/api/v0/users/ping', methods=['GET'])
-def ping_pong():
-    return jsonify({
+@users_blueprint.route('/api/v0/users/health', methods=['GET'])
+def health_pong():
+    response_object = {
         'status': 'success',
-        'message': 'pong!'
-    })
+        'message': 'Users service healthy!'
+    }
+    return jsonify(response_object), 200
 
 
 @users_blueprint.route('/', methods=['GET', 'POST'])
