@@ -21,7 +21,7 @@ class UserStatus extends Component {
 
     getUserStatus() {
         const options = {
-            url: `${process.env.REACT_APP_USERS_SERVICE_URL}/users/auth/status`,
+            url: `${process.env.REACT_APP_USERS_SERVICE_URL}/api/v0/users/auth/status`,
             method: 'get',
             headers: {
                 'Content-Type': 'application/json',

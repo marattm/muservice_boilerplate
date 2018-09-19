@@ -8,4 +8,4 @@ done
 
 echo "PostgreSQL started"
 
-gunicorn -b 0.0.0.0:5000 manage:app
+gunicorn -b 0.0.0.0:5001 manage:app
