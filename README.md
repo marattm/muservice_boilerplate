@@ -1,5 +1,5 @@
 # uservices_boilerplate
-uServices project boilerplate.
+uServices project boilerplate with authentification.
 
 ## Getting started
 
